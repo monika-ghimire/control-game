@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script>
+    const BG_COLOR = "black";
+    const SNAKE_COLOR = "white";
+    const FR=13
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext('2d');
+    canvas.width = canvas.height = 1000;
+    let pos,vel,snake
+    let width=canvas.width
+    let height=canvas.height
+
+    function init(){
+        pos = {x: 10, y: 10};
+            vel = {x: 5, y: 0};
+            
+            
+    }
+    init()
+
+
+
+
+    
+   
+     
+  
+
+    setInterval(() => {
+            requestAnimationFrame(gameLoop);
+        
+            
+        }, 1000 /FR);
+
+        function gameLoop(){
+         
+    //canvas
+    ctx.fillStyle = BG_COLOR;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+     //snake
+     ctx.fillStyle=SNAKE_COLOR
+    ctx.fillRect(pos.x, pos.y, 20, 20);
+    pos.x =pos.x+vel.x;
+    if (pos.x > width) {
+    pos.x = 0;
+  }
+        }
+
+</script>
+
+</html>

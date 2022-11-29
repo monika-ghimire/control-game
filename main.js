@@ -26,10 +26,11 @@ ctx.fillRect(x, y, 40, 40)
 function placeFood() {
   foodX = Math.floor(Math.random() * col) * blockSize
   foodY = Math.floor(Math.random() * rows) * blockSize
+  // foodX = Math.floor(Math.random() * T),
+  // foodY= Math.floor(Math.random() * T), 
   ctx.fillRect(foodX, foodY, 40, 40)
 
 }
-
 
 var x_offset = 1
 var y_offset = 0
@@ -81,8 +82,8 @@ function startLoop() {
     x = window.innerWidth - 10;
   }
 
-  if (y > height) {
-    y = 20;
+  if (y> height) {
+    y = 0;
   }
   if (y <= 0) {
     y = window.innerHeight - 10;
